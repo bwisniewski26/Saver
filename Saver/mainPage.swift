@@ -192,8 +192,8 @@ struct add: View {
             VStack {
                 Text("Add new purchase")
                     .font(.title)
+                    .foregroundColor(.accentColor)
             }
-            Text("Remember to press Return in all fields!")
             Form {
                 TextField(text: $new_name, prompt: Text("Enter purchase name")) {
                     
