@@ -11,7 +11,7 @@ import UIKit
 
 
 
-var saving = Budget(maxBudget: 500, currentBudget: 250, currentSaving: 0, savingPercent: 0)
+var saving = Budget(maxBudget: 0, currentBudget: 0, currentSaving: 0, savingPercent: 0)
 struct mainPage: View {
     var body: some View {
         VStack {
@@ -46,42 +46,50 @@ struct mainPage: View {
 
 struct info: View {
     var body: some View {
-        VStack {
-            Text("How are your finances doing?")
-                .foregroundColor(.accentColor)
-                .font(.title)
-            
-            Text("Your monthly budget is \(saving.maxBudget)PLN")
-                .font(.title2)
-        } .offset(y:-300)
-        HStack {
+        ScrollView {
             VStack {
-                if (saving.currentBudget > 0) {
-                    Text("\(saving.currentBudget)PLN")
-                        .foregroundColor(.green)
-                } else {
-                    Text("\(saving.currentBudget)PLN")
-                        .foregroundColor(.red)
-                }
-                Text("How much money do you have")
-            }
-            VStack {
-                if (saving.currentSaving == 0) {
-                    Text("\(saving.currentSaving)PLN")
-                        .foregroundColor(.red)
-                } else {
-                    Text("\(saving.currentSaving)PLN")
-                        .foregroundColor(.green)
-                }
-                Text("How much money you've saved")
+                Text("How are your finances doing?")
+                    .foregroundColor(.accentColor)
+                    .font(.title)
+                
+                Text("Your monthly budget is \(Double(saving.maxBudget)/100, specifier: "%.2f")PLN")
+                    .font(.title2)
+                    .opacity(0.6)
                 
             }
+            Spacer()
+            HStack {
+                VStack {
+                    if (saving.currentBudget > 0) {
+                        Text("\(Double(saving.currentBudget)/100, specifier: "%.2f")PLN")
+                            .foregroundColor(.green)
+                    } else {
+                        Text("\(Double(saving.currentBudget)/100, specifier: "%.2f")PLN")
+                            .foregroundColor(.red)
+                    }
+                    Text("How much money do you have")
+                        .opacity(0.6)
+                }
+                VStack {
+                    if (saving.currentSaving == 0) {
+                        Text("\(Double(saving.currentSaving)/100, specifier: "%.2f")PLN")
+                            .foregroundColor(.red)
+                    } else {
+                        Text("\(Double(saving.currentSaving)/100, specifier: "%.2f")PLN")
+                            .foregroundColor(.green)
+                    }
+                    Text("How much money you've saved")
+                        .opacity(0.6)
+                    
+                }
+            } .offset(y:75)
         }
-        .offset(y: -200)
+        .defaultScrollAnchor(.bottom)
     }
 }
 
 struct setBudget: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var input: String = ""
     @FocusState private var isFocused: Bool
     @State var possibleBudget: Int?
@@ -92,31 +100,40 @@ struct setBudget: View {
                 Text("Change your budget information")
                     .foregroundColor(.accentColor)
                     .font(.title)
-                Text("Your monthly budget is \(saving.maxBudget)PLN")
+                Text("Your monthly budget is \(Double(saving.maxBudget)/100, specifier: "%.2f")PLN")
                     .font(.title2)
+                    .opacity(0.6)
             }
-            TextField(
-                "New budget",
-                text: $input
-            )
-            .focused($isFocused)
-            .onSubmit {
-                
-                possibleBudget = Int(input)
-                if possibleBudget != nil {
-                    if let possibleBudget {
-                        saving.changeMaxBudget(newBudget: possibleBudget)
-                        
+            Form {
+                TextField("New budget", text: $input) {
+                    
+                }
+                .ignoresSafeArea(.keyboard)
+
+            }
+            .frame(height:100)
+            if input.count > 0 {
+                Button("Save changes") {
+                    if input.count > 0 {
+                        possibleBudget = Int(input)
+                        if possibleBudget != nil {
+                            if let possibleBudget {
+                                let cents = possibleBudget%100
+                                var newBudget = possibleBudget*100 + cents
+                                saving.changeMaxBudget(newBudget: newBudget)
+                                self.presentationMode.wrappedValue.dismiss()
+                            }
+                        }
                     }
                 }
+                .buttonStyle(.borderedProminent)
+                .font(.title3)
+            } else {
+                Button("Save changes") {
+                    
+                }
+                .foregroundColor(Color.gray)
             }
-            .textInputAutocapitalization(.never)
-            .disableAutocorrection(true)
-            .onAppear {
-                isFocused = false
-            }
-            Text("")
-                .foregroundColor(isFocused ? .red : .blue)
             
         }
         .defaultScrollAnchor(.bottom)
@@ -135,7 +152,21 @@ struct showPurchases: View {
             } else {
                 let count = saving.purchases.count
                 ForEach(0..<count, id: \.self) {i in
-                    Text("\(saving.purchases[i].name), \(saving.purchases[i].cost)PLN, Dated at: \(saving.purchases[i].dateString)")
+                    VStack {
+                        HStack {
+                            Image(systemName: "creditcard")
+                            Text("\(saving.purchases[i].name)")
+                                .font(.title2)
+                            .bold()
+                            Spacer()
+                            Text("\(Double(saving.purchases[i].cost)/100, specifier: "%.2f")PLN | ")
+                                .opacity(0.6)
+                                
+                            Text("\(saving.purchases[i].dateString)")
+                                .opacity(0.6)
+                        }
+                    }
+                    // Text("\(saving.purchases[i].name), \(Double(saving.purchases[i].cost)/100, specifier: "%.2f")PLN, Dated at: \(saving.purchases[i].dateString)")
                     
                 }
             }
@@ -167,27 +198,24 @@ struct add: View {
                 TextField(text: $new_name, prompt: Text("Enter purchase name")) {
                     
                 }
-                .focused($isFocused)
-                .onSubmit {
-                    new_purchase.name = new_name
-                }
+                .ignoresSafeArea(.keyboard)
+
                 TextField(text: $cost_input, prompt: Text("Enter purchase cost")) {
-                }
-                .onSubmit {
-                    
-                    new_cost = Int(cost_input)
-                    if new_cost != nil {
-                        if let new_cost {
-                            new_purchase.cost = new_cost
-                        }
-                    }
                 }
                 .ignoresSafeArea(.keyboard)
             }
             .frame(height:200)
             
             Button("Add purchase") {
-                if new_purchase.name.count > 0 {
+                if new_name.count > 0 && cost_input.count > 0 {
+                    new_purchase.name = new_name
+                    new_cost = Int(cost_input)
+                    if new_cost != nil {
+                        if let new_cost {
+                            let cents = new_cost % 100
+                            new_purchase.cost = new_cost*100 + cents
+                        }
+                    }
                     if new_purchase.cost > 0 {
                             saving.addPurchase(new_purchase: new_purchase)
                         self.presentationMode.wrappedValue.dismiss()

@@ -13,7 +13,6 @@
 		4B96448A2B59E82400A33DA4 /* SaverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9644892B59E82400A33DA4 /* SaverTests.swift */; };
 		4B9644942B59E82400A33DA4 /* SaverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9644932B59E82400A33DA4 /* SaverUITests.swift */; };
 		4B9644962B59E82400A33DA4 /* SaverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9644952B59E82400A33DA4 /* SaverUITestsLaunchTests.swift */; };
-		4BBE4D012B5D2C9300EE70F5 /* addingPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4D002B5D2C9300EE70F5 /* addingPurchases.swift */; };
 		4BBE4D052B5D2CF500EE70F5 /* mainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4D042B5D2CF500EE70F5 /* mainPage.swift */; };
 		4BBE4D072B5DA82300EE70F5 /* structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4D062B5DA82300EE70F5 /* structures.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		4B96448F2B59E82400A33DA4 /* SaverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9644932B59E82400A33DA4 /* SaverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaverUITests.swift; sourceTree = "<group>"; };
 		4B9644952B59E82400A33DA4 /* SaverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaverUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4BBE4D002B5D2C9300EE70F5 /* addingPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addingPurchases.swift; sourceTree = "<group>"; };
 		4BBE4D042B5D2CF500EE70F5 /* mainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainPage.swift; sourceTree = "<group>"; };
 		4BBE4D062B5DA82300EE70F5 /* structures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = structures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				4B9644782B59E82300A33DA4 /* SaverApp.swift */,
-				4BBE4D002B5D2C9300EE70F5 /* addingPurchases.swift */,
 				4BBE4D042B5D2CF500EE70F5 /* mainPage.swift */,
 				4BBE4D062B5DA82300EE70F5 /* structures.swift */,
 				4B96447C2B59E82400A33DA4 /* Assets.xcassets */,
@@ -264,7 +261,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BBE4D072B5DA82300EE70F5 /* structures.swift in Sources */,
-				4BBE4D012B5D2C9300EE70F5 /* addingPurchases.swift in Sources */,
 				4B9644792B59E82300A33DA4 /* SaverApp.swift in Sources */,
 				4BBE4D052B5D2CF500EE70F5 /* mainPage.swift in Sources */,
 			);
@@ -433,6 +429,7 @@
 				DEVELOPMENT_TEAM = Z4GFP4L28X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -462,6 +459,7 @@
 				DEVELOPMENT_TEAM = Z4GFP4L28X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

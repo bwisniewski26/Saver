@@ -7,6 +7,8 @@
 
 
 import Foundation
+import SwiftData
+import SwiftUI
 
 
 
@@ -44,6 +46,7 @@ class Budget {
     
     func changeMaxBudget(newBudget: Int) {
         maxBudget = newBudget
+        updateCurrentBudget()
     }
     
     func addSaving(by amount: Int) {
@@ -59,10 +62,10 @@ class Budget {
         
         let purchase = purchaseStruct(cost: purchase_amount, name: name, dateString: localizedDate)
         purchases.append(purchase)
+        updateCurrentBudget()
     }
     
     func addPurchase(new_purchase: purchaseStruct) {
-        currentBudget -= new_purchase.cost
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
@@ -71,6 +74,14 @@ class Budget {
         formattedPurchase.dateString = localizedDate
         print("\(formattedPurchase.name)")
         purchases.append(formattedPurchase)
+        updateCurrentBudget()
+    }
+    
+    func updateCurrentBudget() {
+        currentBudget = maxBudget
+        for purchase in purchases {
+            currentBudget -= purchase.cost
+        }
     }
     
     
