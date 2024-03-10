@@ -2,6 +2,9 @@
 
 Hello there! I'm excited to present you my first real project that's helping me learn Swift and SwiftUI. It's going great and for now I'm having great fun experimenting with different features offered by the language.
 
+## Requirements:
+- because I'm using SwiftData to store information, iOS 17+ is required to use this app
+
 
 ## Current features:
 - add your purchases, along with their value

@@ -6,12 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SaverApp: App {
+    
+    let container: ModelContainer = {
+        let schema = Schema([Purchase.self, dBudget.self])
+        let container = try! ModelContainer(for: schema, configurations: [])
+        return container
+    }()
+    
     var body: some Scene {
         WindowGroup {
             mainPage()
         }
+        .modelContainer(container)
+        //.modelContainer(for: [Purchase.self, dBudget.self])
     }
 }
