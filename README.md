@@ -1,18 +1,30 @@
 # Saver - basic app for tracking your purchases
 
-Hello there! I'm excited to present you my first real project that's helping me learn Swift and SwiftUI. It's going great and for now I'm having great fun experimenting with different features offered by the language.
+This app allows trakcing your purchase and plan building up your savings. Thanks to its simple UI you can easily navigate through your purchases and associate them with different budgets. 
 
 ## Requirements:
-- because I'm using SwiftData to store information, iOS 17+ is required to use this app
+- device running iOS 17 or newer
 
 
 ## Current features:
 - add your purchases, along with their value
-- set your monthly budget and check how is it impacted by combined value of added purchases
-
-## Planned features:
+- set your budget and check how is it impacted by combined value of added purchases
 - saving provided data through multiple instances of the app
-- saving goals
-- saving tips that suggest how much money should you save after every purchase (for example after you make a purchase worth 53.49USD it will suggest 0.51USD/1.51USD/6.51USD)
-- much more refined UI
+- automatic saving value suggestions upon adding every purchase
 
+## To do:
+- UI refining
+- bugfixes
+- iPadOS and macOS native ports
+
+## Screenshots
+
+<p align = "left">
+  <img src = "https://github.com/bwisniewski26/Saver/assets/148913398/05ec3ed0-0428-40f9-8667-4a1203699cf6" width="20%" height="20%">
+  <img src = "https://github.com/bwisniewski26/Saver/assets/148913398/a7211c8e-033b-49fc-918e-d40f934e8bb7" width="20%" height="20%">
+  <img src = "https://github.com/bwisniewski26/Saver/assets/148913398/ba46b35d-8dbc-46fc-bab6-94722cbcb9ac" width="20%" height="20%">
+  <img src = "https://github.com/bwisniewski26/Saver/assets/148913398/f8fcf30d-6022-4f2a-a6f7-13f85e27fbb2" width="20%" height="20%">
+  <img src = "https://github.com/bwisniewski26/Saver/assets/148913398/75b97f5a-f97b-41a5-9e23-c657f1744d9b" width="20%" height="20%">
+</p>
+
+Please note that because I'm actively working on refining this app's UI, user interface may and <b>probably will</b> change in the future.
