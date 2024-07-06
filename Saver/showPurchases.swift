@@ -146,11 +146,11 @@ struct AddPurchase: View {
                     .keyboardType(.decimalPad)
                 Picker("Saving option", selection: $option) {
                     Text("0 PLN").tag(0)
-                    Text("\(1 - price.truncatingRemainder(dividingBy: 1.0), specifier: "%.2f")").tag(1)
-                    Text("\(5 - price.truncatingRemainder(dividingBy: 5.0), specifier: "%.2f")").tag(5)
-                    Text("\(10 - price.truncatingRemainder(dividingBy: 10.0), specifier: "%.2f")").tag(10)
-                    Text("\(100 - price.truncatingRemainder(dividingBy: 100.0), specifier: "%.2f")").tag(100)
-                    Text("\(1000 - price.truncatingRemainder(dividingBy: 1000.0), specifier: "%.2f" )").tag(1000)
+                    Text("\(1 - price.truncatingRemainder(dividingBy: 1.0), specifier: "%.2f") PLN").tag(1)
+                    Text("\(5 - price.truncatingRemainder(dividingBy: 5.0), specifier: "%.2f") PLN").tag(5)
+                    Text("\(10 - price.truncatingRemainder(dividingBy: 10.0), specifier: "%.2f") PLN").tag(10)
+                    Text("\(100 - price.truncatingRemainder(dividingBy: 100.0), specifier: "%.2f") PLN").tag(100)
+                    Text("\(1000 - price.truncatingRemainder(dividingBy: 1000.0), specifier: "%.2f" ) PLN").tag(1000)
                 }
                 
             }
@@ -175,6 +175,7 @@ struct AddPurchase: View {
                                 dismiss()
                             }
                     }
+                    .disabled(price == 0 || name == "")
                 }
             }
         }

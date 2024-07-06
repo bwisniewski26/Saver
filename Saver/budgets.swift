@@ -55,7 +55,7 @@ struct budgets: View {
                     isShowingBudgetSheet = true
                 }
                 .buttonStyle(.borderedProminent)
-                .sheet(isPresented: $isShowingBudgetSheet) { SetBudget() }
+                .sheet(isPresented: $isShowingBudgetSheet) { AddBudget() }
             })
             .offset(y: -60)
         }
