@@ -13,6 +13,8 @@ struct showPurchases: View {
     @State private var isShowingPurchaseSheet = false
     @State private var isShowingUpdatePurchaseSheet = false
     @Query(sort: \Purchase.date) var purchases: [Purchase]
+    @Query() var budgets: [dBudget]
+    @Query() var budgetsInfo: [BudgetsManagement]
     
     @State private var purchaseToEdit: Purchase?
     
@@ -20,27 +22,26 @@ struct showPurchases: View {
         NavigationStack {
             List {
                 ForEach(purchases) { purchase in
-                    purchaseInfo(purchase: purchase)
-                        .onTapGesture {
-                            purchaseToEdit = purchase
+                    if (!budgetsInfo.isEmpty && !budgets.isEmpty)
+                    {
+                        if (budgetsInfo[0].currentId == purchase.budgetId)
+                        {
+                            purchaseInfo(purchase: purchase)
+                                .onTapGesture {
+                                    purchaseToEdit = purchase
+                                }
                         }
+                    }
+                    else{
+                        purchaseInfo(purchase: purchase)
+                            .onTapGesture {
+                                purchaseToEdit = purchase
+                            }
+                    }
                 }
                 .onDelete { purchaseSet in
                     for purchase in purchaseSet {
                         context.delete(purchases[purchase])
-                    }
-                }
-            }
-            .navigationTitle("Purchase list")
-            .navigationBarTitleDisplayMode(.large)
-            .sheet(isPresented: $isShowingPurchaseSheet) { AddPurchase() }
-            .sheet(item: $purchaseToEdit) { purchase in
-                UpdatePurchase(purchase: purchase)
-            }
-            .toolbar {
-                if !purchases.isEmpty {
-                    Button("Add purchase", systemImage: "cart.badge.plus") {
-                        isShowingPurchaseSheet = true
                     }
                 }
             }
@@ -57,6 +58,17 @@ struct showPurchases: View {
                         .buttonStyle(.borderedProminent)
                     })
                     .offset(y: -60)
+                }
+            }
+            .sheet(isPresented: $isShowingPurchaseSheet) { AddPurchase() }
+            .sheet(item: $purchaseToEdit) { purchase in
+                UpdatePurchase(purchase: purchase)
+            }
+            .toolbar {
+                if !purchases.isEmpty {
+                    Button("Add purchase", systemImage: "cart.badge.plus") {
+                        isShowingPurchaseSheet = true
+                    }
                 }
             }
         }
@@ -118,37 +130,50 @@ struct UpdatePurchase: View {
 struct AddPurchase: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) var context
-    @Query(sort: \dBudget.currentBudget) var budget: [dBudget]
+    @Query(sort: \dBudget.id) var budget: [dBudget]
+    @Query(sort: \BudgetsManagement.lastId) var budgetManagement: [BudgetsManagement]
     @State private var name: String = ""
     @State private var date: Date = .now
     @State private var price: Double = 0
+    @State private var option: Int = 0
     
     var body: some View {
         NavigationStack {
             Form {
-                
                 TextField("Purchase name", text: $name)
                 DatePicker("Purchase date: ", selection: $date, displayedComponents: .date)
                 TextField("Price", value: $price, format: .currency(code: "PLN"))
                     .keyboardType(.decimalPad)
+                Picker("Saving option", selection: $option) {
+                    Text("0 PLN").tag(0)
+                    Text("\(1 - price.truncatingRemainder(dividingBy: 1.0), specifier: "%.2f")").tag(1)
+                    Text("\(5 - price.truncatingRemainder(dividingBy: 5.0), specifier: "%.2f")").tag(5)
+                    Text("\(10 - price.truncatingRemainder(dividingBy: 10.0), specifier: "%.2f")").tag(10)
+                    Text("\(100 - price.truncatingRemainder(dividingBy: 100.0), specifier: "%.2f")").tag(100)
+                    Text("\(1000 - price.truncatingRemainder(dividingBy: 1000.0), specifier: "%.2f" )").tag(1000)
+                }
                 
             }
             .navigationTitle("Add purchase")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
-                ToolbarItemGroup(placement: .topBarLeading) {
-                    Button("Cancel") { dismiss() }
-                }
-                
-                ToolbarItemGroup(placement: .topBarTrailing) {
+
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        let purchase = Purchase(name: name, date: date, price: price)
-                        if !budget.isEmpty {
-                            budget[0].currentBudget = budget[0].currentBudget - price
-                        }
-                        context.insert(purchase)
-                        
-                        dismiss()
+                            if (!budget.isEmpty && !budgetManagement.isEmpty) {
+                                budget[budgetManagement[0].currentId].currentSavings += Double(option) - price.truncatingRemainder(dividingBy: Double(option))
+                                price += Double(option) - price.truncatingRemainder(dividingBy: Double(option))
+                                budget[budgetManagement[0].currentId].currentBudget -= price
+                                let purchase = Purchase(name: name, date: date, price: price, budgetId: budgetManagement[0].currentId)
+                                context.insert(purchase)
+                                dismiss()
+                            }
+                            else
+                            {
+                                let purchase = Purchase(name: name, date: date, price: price, budgetId: 0)
+                                context.insert(purchase)
+                                dismiss()
+                            }
                     }
                 }
             }

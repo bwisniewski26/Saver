@@ -12,7 +12,7 @@ import SwiftData
 struct SaverApp: App {
     
     let container: ModelContainer = {
-        let schema = Schema([Purchase.self, dBudget.self])
+        let schema = Schema([Purchase.self, dBudget.self, BudgetsManagement.self])
         let container = try! ModelContainer(for: schema, configurations: [])
         return container
     }()
@@ -22,6 +22,5 @@ struct SaverApp: App {
             mainPage()
         }
         .modelContainer(container)
-        //.modelContainer(for: [Purchase.self, dBudget.self])
     }
 }
