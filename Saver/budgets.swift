@@ -105,14 +105,12 @@ struct AddBudget: View {
                         {
                             let budInfo = BudgetsManagement(lastId: 0)
                             context.insert(budInfo)
-                            let _ = print(currentBudget.isEmpty)
                             let newBudget = dBudget(id: budId, currentBudget: initial, currentSavings: 0.0, initialBudget: initial)
                             context.insert(newBudget)
                         }
                         else {
                             let budId = currentBudget[0].currentId + 1
                             currentBudget[0].currentId = budId
-                            let _ = print(budId)
                             let newBudget = dBudget(id: budId, currentBudget: initial, currentSavings: 0.0, initialBudget: initial)
                             context.insert(newBudget)
                         }
@@ -159,9 +157,7 @@ struct ShowBudget: View {
                 {
                     if (!currentBudget.isEmpty)
                     {
-                        let _ = print(currentBudget[0].currentId)
                         currentBudget[0].currentId = budget.id
-                        let _ = print(currentBudget[0].currentId)
                     }
                 }
                 .disabled(currentBudget[0].currentId == budget.id)
