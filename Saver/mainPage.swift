@@ -19,7 +19,7 @@ struct mainPage: View {
         VStack {
             NavigationView {
                 List {
-                    NavigationLink(destination: info()) {
+                    NavigationLink(destination: budgets()) {
                         HStack {
                             Image(systemName: "creditcard")
                                 .font(.title2)
@@ -33,14 +33,6 @@ struct mainPage: View {
                             Text("List purchases")
                         }
                     }
-                    NavigationLink(destination: settings()) {
-                        HStack {
-                            Image(systemName: "gear")
-                                .font(.title2)
-                            Text("Settings")
-                        }
-                    }
-                    
                 }
                 .navigationBarTitle("Saver")
             }
