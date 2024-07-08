@@ -7,45 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B17951E2C3AAB1F00084062 /* MacSaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17951D2C3AAB1F00084062 /* MacSaverApp.swift */; };
+		4B1795202C3AAB1F00084062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17951F2C3AAB1F00084062 /* ContentView.swift */; };
+		4B1795242C3AAB2000084062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1795232C3AAB2000084062 /* Assets.xcassets */; };
+		4B1795272C3AAB2000084062 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1795262C3AAB2000084062 /* Preview Assets.xcassets */; };
+		4B1795322C3AAB2100084062 /* MacSaverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1795312C3AAB2100084062 /* MacSaverTests.swift */; };
+		4B17953C2C3AAB2100084062 /* MacSaverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17953B2C3AAB2100084062 /* MacSaverUITests.swift */; };
+		4B17953E2C3AAB2100084062 /* MacSaverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17953D2C3AAB2100084062 /* MacSaverUITestsLaunchTests.swift */; };
+		4B1795492C3AAB7000084062 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1795482C3AAB7000084062 /* Objects.swift */; };
+		4B17954B2C3AAC8700084062 /* budgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17954A2C3AAC8700084062 /* budgets.swift */; };
+		4B17954D2C3AACAE00084062 /* purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17954C2C3AACAE00084062 /* purchases.swift */; };
 		4B3785242B9E3A5F00EE11EB /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3785232B9E3A5F00EE11EB /* Objects.swift */; };
 		4B6E12F82B9C9C0600DCAFF5 /* showPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6E12F72B9C9C0600DCAFF5 /* showPurchases.swift */; };
 		4B9644792B59E82300A33DA4 /* SaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9644782B59E82300A33DA4 /* SaverApp.swift */; };
 		4B96447D2B59E82400A33DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B96447C2B59E82400A33DA4 /* Assets.xcassets */; };
 		4B9644802B59E82400A33DA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B96447F2B59E82400A33DA4 /* Preview Assets.xcassets */; };
-		4B96448A2B59E82400A33DA4 /* SaverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9644892B59E82400A33DA4 /* SaverTests.swift */; };
-		4B9644942B59E82400A33DA4 /* SaverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9644932B59E82400A33DA4 /* SaverUITests.swift */; };
-		4B9644962B59E82400A33DA4 /* SaverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9644952B59E82400A33DA4 /* SaverUITestsLaunchTests.swift */; };
 		4BBE4D052B5D2CF500EE70F5 /* mainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4D042B5D2CF500EE70F5 /* mainPage.swift */; };
 		4BD422702C394B3A006EBCBE /* budgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4226F2C394B3A006EBCBE /* budgets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4B9644862B59E82400A33DA4 /* PBXContainerItemProxy */ = {
+		4B17952E2C3AAB2100084062 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4B96446D2B59E82300A33DA4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4B9644742B59E82300A33DA4;
-			remoteInfo = Saver;
+			remoteGlobalIDString = 4B17951A2C3AAB1F00084062;
+			remoteInfo = MacSaver;
 		};
-		4B9644902B59E82400A33DA4 /* PBXContainerItemProxy */ = {
+		4B1795382C3AAB2100084062 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4B96446D2B59E82300A33DA4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4B9644742B59E82300A33DA4;
-			remoteInfo = Saver;
+			remoteGlobalIDString = 4B17951A2C3AAB1F00084062;
+			remoteInfo = MacSaver;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B17951B2C3AAB1F00084062 /* MacSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B17951D2C3AAB1F00084062 /* MacSaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSaverApp.swift; sourceTree = "<group>"; };
+		4B17951F2C3AAB1F00084062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4B1795232C3AAB2000084062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B1795262C3AAB2000084062 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4B1795282C3AAB2000084062 /* MacSaver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacSaver.entitlements; sourceTree = "<group>"; };
+		4B17952D2C3AAB2100084062 /* MacSaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacSaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B1795312C3AAB2100084062 /* MacSaverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSaverTests.swift; sourceTree = "<group>"; };
+		4B1795372C3AAB2100084062 /* MacSaverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacSaverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B17953B2C3AAB2100084062 /* MacSaverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSaverUITests.swift; sourceTree = "<group>"; };
+		4B17953D2C3AAB2100084062 /* MacSaverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSaverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4B1795482C3AAB7000084062 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		4B17954A2C3AAC8700084062 /* budgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgets.swift; sourceTree = "<group>"; };
+		4B17954C2C3AACAE00084062 /* purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purchases.swift; sourceTree = "<group>"; };
 		4B3785232B9E3A5F00EE11EB /* Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		4B6E12F72B9C9C0600DCAFF5 /* showPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showPurchases.swift; sourceTree = "<group>"; };
 		4B9644752B59E82300A33DA4 /* Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9644782B59E82300A33DA4 /* SaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaverApp.swift; sourceTree = "<group>"; };
 		4B96447C2B59E82400A33DA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B96447F2B59E82400A33DA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4B9644852B59E82400A33DA4 /* SaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9644892B59E82400A33DA4 /* SaverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaverTests.swift; sourceTree = "<group>"; };
-		4B96448F2B59E82400A33DA4 /* SaverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9644932B59E82400A33DA4 /* SaverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaverUITests.swift; sourceTree = "<group>"; };
 		4B9644952B59E82400A33DA4 /* SaverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaverUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4BBE4D042B5D2CF500EE70F5 /* mainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainPage.swift; sourceTree = "<group>"; };
@@ -53,21 +72,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B1795182C3AAB1F00084062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B17952A2C3AAB2100084062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1795342C3AAB2100084062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B9644722B59E82300A33DA4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4B9644822B59E82400A33DA4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4B96448C2B59E82400A33DA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,12 +103,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B17951C2C3AAB1F00084062 /* MacSaver */ = {
+			isa = PBXGroup;
+			children = (
+				4B17951D2C3AAB1F00084062 /* MacSaverApp.swift */,
+				4B17951F2C3AAB1F00084062 /* ContentView.swift */,
+				4B17954A2C3AAC8700084062 /* budgets.swift */,
+				4B1795482C3AAB7000084062 /* Objects.swift */,
+				4B17954C2C3AACAE00084062 /* purchases.swift */,
+				4B1795232C3AAB2000084062 /* Assets.xcassets */,
+				4B1795282C3AAB2000084062 /* MacSaver.entitlements */,
+				4B1795252C3AAB2000084062 /* Preview Content */,
+			);
+			path = MacSaver;
+			sourceTree = "<group>";
+		};
+		4B1795252C3AAB2000084062 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4B1795262C3AAB2000084062 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4B1795302C3AAB2100084062 /* MacSaverTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B1795312C3AAB2100084062 /* MacSaverTests.swift */,
+			);
+			path = MacSaverTests;
+			sourceTree = "<group>";
+		};
+		4B17953A2C3AAB2100084062 /* MacSaverUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4B17953B2C3AAB2100084062 /* MacSaverUITests.swift */,
+				4B17953D2C3AAB2100084062 /* MacSaverUITestsLaunchTests.swift */,
+			);
+			path = MacSaverUITests;
+			sourceTree = "<group>";
+		};
 		4B96446C2B59E82300A33DA4 = {
 			isa = PBXGroup;
 			children = (
 				4B9644772B59E82300A33DA4 /* Saver */,
 				4B9644882B59E82400A33DA4 /* SaverTests */,
 				4B9644922B59E82400A33DA4 /* SaverUITests */,
+				4B17951C2C3AAB1F00084062 /* MacSaver */,
+				4B1795302C3AAB2100084062 /* MacSaverTests */,
+				4B17953A2C3AAB2100084062 /* MacSaverUITests */,
 				4B9644762B59E82300A33DA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,8 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				4B9644752B59E82300A33DA4 /* Saver.app */,
-				4B9644852B59E82400A33DA4 /* SaverTests.xctest */,
-				4B96448F2B59E82400A33DA4 /* SaverUITests.xctest */,
+				4B17951B2C3AAB1F00084062 /* MacSaver.app */,
+				4B17952D2C3AAB2100084062 /* MacSaverTests.xctest */,
+				4B1795372C3AAB2100084062 /* MacSaverUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +209,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4B17951A2C3AAB1F00084062 /* MacSaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B1795452C3AAB2100084062 /* Build configuration list for PBXNativeTarget "MacSaver" */;
+			buildPhases = (
+				4B1795172C3AAB1F00084062 /* Sources */,
+				4B1795182C3AAB1F00084062 /* Frameworks */,
+				4B1795192C3AAB1F00084062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacSaver;
+			productName = MacSaver;
+			productReference = 4B17951B2C3AAB1F00084062 /* MacSaver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4B17952C2C3AAB2100084062 /* MacSaverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B1795462C3AAB2100084062 /* Build configuration list for PBXNativeTarget "MacSaverTests" */;
+			buildPhases = (
+				4B1795292C3AAB2100084062 /* Sources */,
+				4B17952A2C3AAB2100084062 /* Frameworks */,
+				4B17952B2C3AAB2100084062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B17952F2C3AAB2100084062 /* PBXTargetDependency */,
+			);
+			name = MacSaverTests;
+			productName = MacSaverTests;
+			productReference = 4B17952D2C3AAB2100084062 /* MacSaverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4B1795362C3AAB2100084062 /* MacSaverUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B1795472C3AAB2100084062 /* Build configuration list for PBXNativeTarget "MacSaverUITests" */;
+			buildPhases = (
+				4B1795332C3AAB2100084062 /* Sources */,
+				4B1795342C3AAB2100084062 /* Frameworks */,
+				4B1795352C3AAB2100084062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B1795392C3AAB2100084062 /* PBXTargetDependency */,
+			);
+			name = MacSaverUITests;
+			productName = MacSaverUITests;
+			productReference = 4B1795372C3AAB2100084062 /* MacSaverUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		4B9644742B59E82300A33DA4 /* Saver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B9644992B59E82400A33DA4 /* Build configuration list for PBXNativeTarget "Saver" */;
@@ -156,42 +279,6 @@
 			productReference = 4B9644752B59E82300A33DA4 /* Saver.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4B9644842B59E82400A33DA4 /* SaverTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4B96449C2B59E82400A33DA4 /* Build configuration list for PBXNativeTarget "SaverTests" */;
-			buildPhases = (
-				4B9644812B59E82400A33DA4 /* Sources */,
-				4B9644822B59E82400A33DA4 /* Frameworks */,
-				4B9644832B59E82400A33DA4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4B9644872B59E82400A33DA4 /* PBXTargetDependency */,
-			);
-			name = SaverTests;
-			productName = SaverTests;
-			productReference = 4B9644852B59E82400A33DA4 /* SaverTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		4B96448E2B59E82400A33DA4 /* SaverUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4B96449F2B59E82400A33DA4 /* Build configuration list for PBXNativeTarget "SaverUITests" */;
-			buildPhases = (
-				4B96448B2B59E82400A33DA4 /* Sources */,
-				4B96448C2B59E82400A33DA4 /* Frameworks */,
-				4B96448D2B59E82400A33DA4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4B9644912B59E82400A33DA4 /* PBXTargetDependency */,
-			);
-			name = SaverUITests;
-			productName = SaverUITests;
-			productReference = 4B96448F2B59E82400A33DA4 /* SaverUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,19 +286,22 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					4B17951A2C3AAB1F00084062 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					4B17952C2C3AAB2100084062 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4B17951A2C3AAB1F00084062;
+					};
+					4B1795362C3AAB2100084062 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4B17951A2C3AAB1F00084062;
+					};
 					4B9644742B59E82300A33DA4 = {
 						CreatedOnToolsVersion = 15.2;
-					};
-					4B9644842B59E82400A33DA4 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 4B9644742B59E82300A33DA4;
-					};
-					4B96448E2B59E82400A33DA4 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 4B9644742B59E82300A33DA4;
 					};
 				};
 			};
@@ -229,13 +319,37 @@
 			projectRoot = "";
 			targets = (
 				4B9644742B59E82300A33DA4 /* Saver */,
-				4B9644842B59E82400A33DA4 /* SaverTests */,
-				4B96448E2B59E82400A33DA4 /* SaverUITests */,
+				4B17951A2C3AAB1F00084062 /* MacSaver */,
+				4B17952C2C3AAB2100084062 /* MacSaverTests */,
+				4B1795362C3AAB2100084062 /* MacSaverUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4B1795192C3AAB1F00084062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1795272C3AAB2000084062 /* Preview Assets.xcassets in Resources */,
+				4B1795242C3AAB2000084062 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B17952B2C3AAB2100084062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1795352C3AAB2100084062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B9644732B59E82300A33DA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,23 +359,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B9644832B59E82400A33DA4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4B96448D2B59E82400A33DA4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4B1795172C3AAB1F00084062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1795202C3AAB1F00084062 /* ContentView.swift in Sources */,
+				4B17954D2C3AACAE00084062 /* purchases.swift in Sources */,
+				4B17954B2C3AAC8700084062 /* budgets.swift in Sources */,
+				4B1795492C3AAB7000084062 /* Objects.swift in Sources */,
+				4B17951E2C3AAB1F00084062 /* MacSaverApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1795292C3AAB2100084062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1795322C3AAB2100084062 /* MacSaverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1795332C3AAB2100084062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B17953E2C3AAB2100084062 /* MacSaverUITestsLaunchTests.swift in Sources */,
+				4B17953C2C3AAB2100084062 /* MacSaverUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B9644712B59E82300A33DA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,39 +403,162 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B9644812B59E82400A33DA4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B96448A2B59E82400A33DA4 /* SaverTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4B96448B2B59E82400A33DA4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B9644962B59E82400A33DA4 /* SaverUITestsLaunchTests.swift in Sources */,
-				4B9644942B59E82400A33DA4 /* SaverUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4B9644872B59E82400A33DA4 /* PBXTargetDependency */ = {
+		4B17952F2C3AAB2100084062 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4B9644742B59E82300A33DA4 /* Saver */;
-			targetProxy = 4B9644862B59E82400A33DA4 /* PBXContainerItemProxy */;
+			target = 4B17951A2C3AAB1F00084062 /* MacSaver */;
+			targetProxy = 4B17952E2C3AAB2100084062 /* PBXContainerItemProxy */;
 		};
-		4B9644912B59E82400A33DA4 /* PBXTargetDependency */ = {
+		4B1795392C3AAB2100084062 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4B9644742B59E82300A33DA4 /* Saver */;
-			targetProxy = 4B9644902B59E82400A33DA4 /* PBXContainerItemProxy */;
+			target = 4B17951A2C3AAB1F00084062 /* MacSaver */;
+			targetProxy = 4B1795382C3AAB2100084062 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4B17953F2C3AAB2100084062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = MacSaver/MacSaver.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacSaver/Preview Content\"";
+				DEVELOPMENT_TEAM = Z4GFP4L28X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bwisniewski26.MacSaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4B1795402C3AAB2100084062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = MacSaver/MacSaver.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacSaver/Preview Content\"";
+				DEVELOPMENT_TEAM = Z4GFP4L28X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bwisniewski26.MacSaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4B1795412C3AAB2100084062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4GFP4L28X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bwisniewski26.MacSaverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacSaver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacSaver";
+			};
+			name = Debug;
+		};
+		4B1795422C3AAB2100084062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4GFP4L28X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bwisniewski26.MacSaverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacSaver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacSaver";
+			};
+			name = Release;
+		};
+		4B1795432C3AAB2100084062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4GFP4L28X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bwisniewski26.MacSaverUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MacSaver;
+			};
+			name = Debug;
+		};
+		4B1795442C3AAB2100084062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4GFP4L28X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bwisniewski26.MacSaverUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MacSaver;
+			};
+			name = Release;
+		};
 		4B9644972B59E82400A33DA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,81 +740,36 @@
 			};
 			name = Release;
 		};
-		4B96449D2B59E82400A33DA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bartekwisniewski.SaverTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Saver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Saver";
-			};
-			name = Debug;
-		};
-		4B96449E2B59E82400A33DA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bartekwisniewski.SaverTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Saver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Saver";
-			};
-			name = Release;
-		};
-		4B9644A02B59E82400A33DA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bartekwisniewski.SaverUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Saver;
-			};
-			name = Debug;
-		};
-		4B9644A12B59E82400A33DA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bartekwisniewski.SaverUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Saver;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4B1795452C3AAB2100084062 /* Build configuration list for PBXNativeTarget "MacSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B17953F2C3AAB2100084062 /* Debug */,
+				4B1795402C3AAB2100084062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B1795462C3AAB2100084062 /* Build configuration list for PBXNativeTarget "MacSaverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B1795412C3AAB2100084062 /* Debug */,
+				4B1795422C3AAB2100084062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B1795472C3AAB2100084062 /* Build configuration list for PBXNativeTarget "MacSaverUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B1795432C3AAB2100084062 /* Debug */,
+				4B1795442C3AAB2100084062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4B9644702B59E82300A33DA4 /* Build configuration list for PBXProject "Saver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -577,24 +784,6 @@
 			buildConfigurations = (
 				4B96449A2B59E82400A33DA4 /* Debug */,
 				4B96449B2B59E82400A33DA4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4B96449C2B59E82400A33DA4 /* Build configuration list for PBXNativeTarget "SaverTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4B96449D2B59E82400A33DA4 /* Debug */,
-				4B96449E2B59E82400A33DA4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4B96449F2B59E82400A33DA4 /* Build configuration list for PBXNativeTarget "SaverUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4B9644A02B59E82400A33DA4 /* Debug */,
-				4B9644A12B59E82400A33DA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

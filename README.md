@@ -4,6 +4,7 @@ This app allows trakcing your purchase and plan building up your savings. Thanks
 
 ## Requirements:
 - device running iOS 17 or newer
+- device running macOS Sonoma (Ventura and earlier might work, but are untested)
 
 
 ## Current features:
@@ -11,11 +12,11 @@ This app allows trakcing your purchase and plan building up your savings. Thanks
 - set your budget and check how is it impacted by combined value of added purchases
 - saving provided data through multiple instances of the app
 - automatic saving value suggestions upon adding every purchase
+- macOS native port, iPadOS is supported via iOS version
 
 ## To do:
 - UI refining
 - bugfixes
-- iPadOS and macOS native ports
 
 ## Screenshots
 

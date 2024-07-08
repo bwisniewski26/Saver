@@ -1,8 +1,8 @@
 //
 //  budgets.swift
-//  Saver
+//  MacSaver
 //
-//  Created by Bartek Wiśniewski on 06/07/2024.
+//  Created by Bartek Wiśniewski on 07/07/2024.
 //
 
 import SwiftUI
@@ -12,7 +12,7 @@ struct budgets: View {
     @Environment(\.modelContext) var context
     @Query(sort: \dBudget.id) var budgets: [dBudget]
     @Query(sort: \BudgetsManagement.currentId) var currentBudget: [BudgetsManagement]
-    @Query(sort: \Purchase.budgetId) var purchases: [Purchase]
+    @Query(sort: \Purchase.date) var purchases: [Purchase]
     @State private var budgetToShow: dBudget?
     @State private var isShowingBudgetSheet = false
     var body: some View {
@@ -21,29 +21,30 @@ struct budgets: View {
             {
                 List {
                     ForEach(budgets) { budget in
-                        budgetInfo(budget: budget)
+                        BudgetInfo(budget: budget)
                             .onTapGesture {
                                 budgetToShow = budget
                             }
-                    }
-                    .onDelete { budgetSet in
-                        for budget in budgetSet {
-                            for purchase in purchases
-                            {
-                                if budgets[budget].purchases.contains(purchase)
+                            .contextMenu {
+                                Button("Delete budget")
                                 {
-                                    purchase.budgetId = nil
+                                    for purchase in purchases
+                                    {
+                                        if budget.purchases.contains(purchase)
+                                        {
+                                            purchase.budgetId = nil
+                                        }
+                                    }
+                                    context.delete(budget)
+                                    if (budgets.count > 0)
+                                    {
+                                        currentBudget[0].currentId = budgets[budgets.count-1].id
+                                    }
+                                    else {
+                                        context.delete(currentBudget[0])
+                                    }
                                 }
                             }
-                            context.delete(budgets[budget])
-                            if (budgets.count > 0)
-                            {
-                                currentBudget[0].currentId = budgets[budgets.count-1].id
-                            }
-                            else {
-                                context.delete(currentBudget[0])
-                            }
-                        }
                     }
                 }
             }
@@ -59,10 +60,9 @@ struct budgets: View {
                     .buttonStyle(.borderedProminent)
                 }
                 )
-                .offset(y:-60)
-
-        }
-        
+                
+            }
+            
         }
         .navigationTitle("Your budgets")
         .sheet(isPresented: $isShowingBudgetSheet)
@@ -82,10 +82,10 @@ struct budgets: View {
     
 }
 
-struct budgetInfo: View {
+struct BudgetInfo: View {
     let budget: dBudget
     var body: some View {
-        HStack{
+        HStack {
             Image(systemName: "banknote")
             Text("ID: \(budget.id)")
                 .font(.title2)
@@ -93,7 +93,7 @@ struct budgetInfo: View {
             Spacer()
             Text("Money left: \(budget.currentBudget, format: .currency(code:"PLN"))")
                 .opacity(0.6)
-            }
+        }
     }
 }
 
@@ -106,15 +106,14 @@ struct AddBudget: View {
     @Query() var currentBudget: [BudgetsManagement]
     var body: some View {
         NavigationStack {
+            Text("Add new budget")
+                .font(.title2)
             Form {
-                TextField("Initial money", value: $initial, format: .currency(code: "PLN"))
-                    .keyboardType(.numberPad)
+                TextField("", value: $initial, format: .currency(code: "PLN"))
             }
-            .navigationTitle("Add budget")
-            .navigationBarTitleDisplayMode(.large)
             .toolbar {
             
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         if (currentBudget.isEmpty)
                         {
@@ -143,10 +142,10 @@ struct AddBudget: View {
 
             }
         }
+        .frame(width: 250, height: 100)
+        .fixedSize(horizontal: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
     }
-    
 }
-
 
 struct ShowBudget: View {
     @Environment(\.dismiss) private var dismiss
@@ -206,6 +205,22 @@ struct ShowBudget: View {
                 }
             } .offset(y:75)
         }
+        .frame(width: 400, height: 300)
+        .fixedSize(horizontal: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction)
+            {
+                Button("Close", role: .cancel)
+                {
+                    dismiss()
+                }
+            }
+        }
         
     }
+}
+
+
+#Preview {
+    budgets()
 }

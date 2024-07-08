@@ -8,14 +8,13 @@
 import SwiftUI
 import SwiftData
 
-struct showPurchases: View {
+struct purchases: View {
     @Environment(\.modelContext) var context
     @State private var isShowingPurchaseSheet = false
     @State private var isShowingUpdatePurchaseSheet = false
     @Query(sort: \Purchase.date) var purchases: [Purchase]
     @Query() var budgets: [dBudget]
     @Query() var budgetsInfo: [BudgetsManagement]
-    
     @State private var purchaseToEdit: Purchase?
     
     var body: some View {
@@ -29,35 +28,40 @@ struct showPurchases: View {
                             if (budgets[budgetsInfo[0].currentId].purchases.contains(purchase) || purchase.budgetId == nil)
                             {
                                 purchaseInfo(purchase: purchase)
-                                    .onTapGesture{
-                                        purchaseToEdit = purchase
-                                        isShowingUpdatePurchaseSheet = true
+                                    .contextMenu{
+                                        Button("Update purchase")
+                                        {
+                                            purchaseToEdit = purchase
+                                            isShowingUpdatePurchaseSheet = true
+                                        }
+                                        Button("Delete purchase")
+                                        {
+                                            budgets[budgetsInfo[0].currentId].currentSavings -= purchase.saving ?? 0.0
+                                            budgets[budgetsInfo[0].currentId].currentBudget += purchase.price
+                                            context.delete(purchase)
+                                            budgets[budgetsInfo[0].currentId].purchases.removeAll { purchaseToRemove in
+                                              return purchaseToRemove == purchase
+                                            }
+                                        }
+                                        
                                     }
-                            }
-                        }
-                        .onDelete { purchaseSet in
-                            for purchase in purchaseSet {
-                                budgets[budgetsInfo[0].currentId].currentSavings -= purchases[purchase].saving ?? 0.0
-                                budgets[budgetsInfo[0].currentId].currentBudget += purchases[purchase].price
-                                context.delete(purchases[purchase])
-                                budgets[budgetsInfo[0].currentId].purchases.removeAll { purchaseToRemove in
-                                  return purchaseToRemove == purchases[purchase]
-                                }
                             }
                         }
                     } else
                     {
                         ForEach(purchases) { purchase in
                             purchaseInfo(purchase: purchase)
-                                .onTapGesture {
-                                    purchaseToEdit = purchase
-                                    isShowingUpdatePurchaseSheet = true
+                                .contextMenu{
+                                    Button("Update purchase")
+                                    {
+                                        purchaseToEdit = purchase
+                                        isShowingUpdatePurchaseSheet = true
+                                    }
+                                    Button("Delete purchase")
+                                    {
+                                        context.delete(purchase)
+                                    }
                                 }
-                        }
-                        .onDelete { purchaseSet in
-                            for purchase in purchaseSet {
-                                context.delete(purchases[purchase])
-                            }
                         }
                     }
                 }
@@ -116,8 +120,8 @@ struct purchaseInfo: View {
 struct UpdatePurchase: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) var context
-    @State var option: Int = 0
     
+    @State var option: Int = 0
     @Bindable var purchase: Purchase
     
     var body: some View {
@@ -127,7 +131,6 @@ struct UpdatePurchase: View {
                 TextField("Purchase name", text: $purchase.name)
                 DatePicker("Purchase date: ", selection: $purchase.date, displayedComponents: .date)
                 TextField("Price", value: $purchase.price, format: .currency(code: "PLN"))
-                    .keyboardType(.decimalPad)
                 Picker("Saving option", selection: $option) {
                     Text("0 PLN").tag(0)
                     if (1 - purchase.price.truncatingRemainder(dividingBy: 1.0) != 1)
@@ -157,8 +160,8 @@ struct UpdatePurchase: View {
                 
             }
             .navigationTitle("Update purchase")
-            .navigationBarTitleDisplayMode(.large)
             .toolbar {
+                
                 ToolbarItemGroup(placement: .confirmationAction) {
                     Button("Done") {
                         if (option != 0)
@@ -175,6 +178,8 @@ struct UpdatePurchase: View {
                 }
             }
         }
+        .frame(width:350, height: 160)
+        .fixedSize()
     }
     
 }
@@ -226,47 +231,47 @@ struct AddPurchase: View {
                 {
                     Text("Assign to budget?")
                 }
-                .toggleStyle(.switch)
+                .toggleStyle(.checkbox)
                 
             }
             .navigationTitle("Add purchase")
-            .navigationBarTitleDisplayMode(.large)
-            .toolbar{
-                ToolbarItem(placement: .topBarTrailing) {
+            .toolbar {
+
+                ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        if (!budget.isEmpty && !budgetManagement.isEmpty && assignToBudget) {
-                            
-                            var saving: Double
-                            if (option != 0)
-                            {
-                                saving = Double(option) - price.truncatingRemainder(dividingBy: Double(option))
-                                budget[budgetManagement[0].currentId].currentSavings += Double(option) - price.truncatingRemainder(dividingBy: Double(option))
+                            if (!budget.isEmpty && !budgetManagement.isEmpty && assignToBudget) {
+                                
+                                var saving: Double
+                                if (option != 0)
+                                {
+                                    saving = Double(option) - price.truncatingRemainder(dividingBy: Double(option))
+                                    budget[budgetManagement[0].currentId].currentSavings += Double(option) - price.truncatingRemainder(dividingBy: Double(option))
+                                }
+                                else
+                                {
+                                    saving = 0.0
+                                }
+                                budget[budgetManagement[0].currentId].currentBudget -= price
+                                let purchase = Purchase(name: name, date: date, price: price, saving: saving)
+                                purchase.budgetId = budgetManagement[0].currentId
+                                budget[budgetManagement[0].currentId].purchases.append(purchase)
+                                context.insert(purchase)
+                                dismiss()
                             }
                             else
                             {
-                                saving = 0.0
+                                var saving: Double = 0.0
+                                if (option != 0)
+                                {
+                                    saving = Double(option) - price.truncatingRemainder(dividingBy: Double(option))
+                                }
+                                else {
+                                    saving = 0.0
+                                }
+                                let purchase = Purchase(name: name, date: date, price: price, saving: saving)
+                                context.insert(purchase)
+                                dismiss()
                             }
-                            budget[budgetManagement[0].currentId].currentBudget -= price
-                            let purchase = Purchase(name: name, date: date, price: price, saving: saving)
-                            purchase.budgetId = budgetManagement[0].currentId
-                            budget[budgetManagement[0].currentId].purchases.append(purchase)
-                            context.insert(purchase)
-                            dismiss()
-                        }
-                        else
-                        {
-                            var saving: Double = 0.0
-                            if (option != 0)
-                            {
-                                saving = Double(option) - price.truncatingRemainder(dividingBy: Double(option))
-                            }
-                            else {
-                                saving = 0.0
-                            }
-                            let purchase = Purchase(name: name, date: date, price: price, saving: saving)
-                            context.insert(purchase)
-                            dismiss()
-                        }
                     }
                     .disabled(price == 0 || name == "")
                 }
@@ -278,10 +283,8 @@ struct AddPurchase: View {
                 }
             }
         }
+        .frame(width:350, height: 160)
+        .fixedSize()
     }
     
-}
-
-#Preview {
-    showPurchases()
 }

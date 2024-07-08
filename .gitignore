@@ -1,7 +1,9 @@
-# Created by https://www.toptal.com/developers/gitignore/api/swift,macos,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift,macos,xcode
+# Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,Cobjective-c,osx
+# Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,Cobjective-c,osx
 
-### macOS ###
+#!! ERROR: cobjective-c is undefined. Use list command to see defined gitignore types !!#
+
+### OSX ###
 # General
 .DS_Store
 .AppleDouble
@@ -29,10 +31,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
-### macOS Patch ###
-# iCloud generated files
-*.icloud
 
 ### Swift ###
 # Xcode
@@ -131,5 +129,5 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/swift,macos,xcode
+# End of https://www.toptal.com/developers/gitignore/api/swift,xcode,Cobjective-c,osx
 
